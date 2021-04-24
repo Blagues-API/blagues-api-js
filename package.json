@@ -1,0 +1,14 @@
+{
+  "name": "blaguesapi",
+  "version": "1.0.0",
+  "description": "BlaguesAPI package",
+  "main": "lib/index.js",
+  "keywords": [
+    "BlaguesAPI"
+  ],
+  "author": "RichardDorian",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
