@@ -6,6 +6,15 @@
   "scripts": {
     "lint": "prettier --write **/*.js"
   },
+  "lint-staged": {
+    "*.{js}": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
   "keywords": [
     "BlaguesAPI"
   ],
@@ -15,6 +24,10 @@
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "husky": "^4.3.6",
+    "lint-staged": "^10.5.3",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.25.0",
     "prettier": "^2.2.1"
