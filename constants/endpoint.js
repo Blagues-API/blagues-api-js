@@ -1,7 +1,7 @@
-const ENDPOINT = {
-    FROMID: '/api/id/:id:',
-    RANDOM: '/api/random',
-    RANDOMCATEGORIZED: '/api/type/:type:/random'
-}
+const ENDPOINTS = {
+  FROMID: '/api/id/:id:',
+  RANDOM: '/api/random',
+  RANDOMCATEGORIZED: '/api/type/:type:/random',
+};
 
-module.exports = ENDPOINT;
+module.exports = ENDPOINTS;
