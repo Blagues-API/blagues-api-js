@@ -46,5 +46,8 @@
   "bugs": {
     "url": "https://github.com/Blagues-API/package-js/issues"
   },
-  "homepage": "https://github.com/Blagues-API/package-js#readme"
+  "homepage": "https://github.com/Blagues-API/package-js#readme",
+  "publishConfig": {
+    "access": "public"
+  }
 }
