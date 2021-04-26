@@ -1,6 +1,6 @@
 {
   "name": "blaguesapi",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "BlaguesAPI package",
   "main": "lib/index.js",
   "scripts": {
@@ -19,13 +19,6 @@
   "keywords": [
     "BlaguesAPI"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/RichardDorian/BlaguesAPI.git"
-  },
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
-  },
   "author": "RichardDorian",
   "license": "MIT",
   "dependencies": {
