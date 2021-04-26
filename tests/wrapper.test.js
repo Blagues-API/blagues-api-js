@@ -2,6 +2,9 @@ const BlaguesAPI = require('../lib/index');
 const api = new BlaguesAPI(process.env.token);
 
 describe('wrapper api tests', () => {
+  test('token exists', () => {
+    return expect(process.env.token).toBeDefined();
+  });
 
   test('random joke', async () => {
     const randomJoke = {
