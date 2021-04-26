@@ -1,0 +1,8 @@
+tests
+.vscode
+.eslintrc.json
+.prettierrc.json
+commitlinit.config.js
+.env.example
+.env
+.editorconfig
