@@ -3,7 +3,8 @@
   "parser": "babel-eslint",
   "env": {
     "node": true,
-    "es6": true
+    "es6": true,
+    "jest": true
   },
   "rules": {
     "indent": ["warn", 2],
