@@ -25,17 +25,17 @@ describe('wrapper api tests', () => {
   test('random joke categorized', async () => {
     expect.assertions(1);
 
-    const joke = await api.Jokes.rancomCategorized(api.Category.DEV);
-    return expect(joke.type).toBe(api.Category.DEV);
+    const joke = await api.Jokes.rancomCategorized(BlaguesAPI.categories.DEV);
+    return expect(joke.type).toBe(BlaguesAPI.categories.DEV);
   });
 
   test('random joke with disallowed type', async () => {
     expect.assertions(1);
 
     const joke = await api.Jokes.random({
-      disallow: [api.Category.DARK],
+      disallow: [BlaguesAPI.categories.DARK],
     });
-    return expect(joke.type).not.toBe(api.Category.DARK);
+    return expect(joke.type).not.toBe(BlaguesAPI.categories.DARK);
   });
 
   test('get joke by ID', async () => {
