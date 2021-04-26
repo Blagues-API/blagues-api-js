@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const BlaguesAPI = require('../lib/index');
 const api = new BlaguesAPI(process.env.token);
 

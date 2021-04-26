@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "lint": "prettier --write **/*.js",
-    "test": "jest --setupFiles dotenv/config"
+    "test": "jest"
   },
   "lint-staged": {
     "*.{js}": "eslint"
