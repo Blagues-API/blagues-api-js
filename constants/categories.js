@@ -1,4 +1,4 @@
-const CATEGORY = {
+const CATEGORIES = {
   GLOBAL: 'global',
   DEV: 'dev',
   DARK: 'dark',
@@ -7,4 +7,4 @@ const CATEGORY = {
   BLONDES: 'blondes',
 };
 
-module.exports = CATEGORY;
+module.exports = CATEGORIES;
