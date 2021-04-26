@@ -4,6 +4,7 @@
     "esbenp.prettier-vscode",
     "deepscan.vscode-deepscan",
     "dbaeumer.vscode-eslint",
-    "vivaxy.vscode-conventional-commits"
+    "vivaxy.vscode-conventional-commits",
+    "orta.vscode-jest"
   ]
 }
