@@ -52,7 +52,7 @@ Méthode pour obtenir une blague aléatoire provenant d'une catégorie spécifiq
 vous pouvez voir la liste des différentes catégories [ici](#catégories)
 
 ```js
-await blaguesAPI.Jokes.randomCategorized(blaguesAPI.Category.DEV);
+await blaguesAPI.Jokes.randomCategorized(BlaguesAPI.categories.DEV);
 ```
 
 ### fromId
