@@ -24,7 +24,7 @@ import BlaguesAPI from 'blagues-api';
 const BlaguesAPI = require('blagues-api');
 
 // Browser
-<script src="https://unpkg.com/blagues-api@2.0.0/dist/blagues-api.min.js"></script>;
+<script src="https://unpkg.com/blagues-api@2.1.0/dist/blagues-api.umd.js"></script>;
 ```
 
 ### Initialisation
