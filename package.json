@@ -1,11 +1,20 @@
 {
-  "name": "@blagues-api/blaguesapi",
-  "version": "1.1.0",
+  "name": "blagues-api",
+  "version": "2.0.0",
   "description": "BlaguesAPI package",
-  "main": "lib/index.js",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index.min.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "lint": "prettier --write **/*.js",
-    "test": "jest"
+    "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
+    "build:umd": "rollup --config rollup.config.js --format umd --file dist/blagues-api.umd.js",
+    "build:es": "rollup --config rollup.config.js --format es --file dist/blagues-api.esm.js",
+    "build:unpkg": "rollup --config rollup.config.js --format iife --file dist/blagues-api.min.js",
+    "test:watch": "jest --watch",
+    "test": "jest",
+    "publish": "npm publish"
   },
   "lint-staged": {
     "*.{js}": "eslint"
@@ -17,36 +26,52 @@
     }
   },
   "keywords": [
-    "BlaguesAPI"
+    "BlaguesAPI",
+    "wrapper api",
+    "typescript"
   ],
-  "author": "RichardDorian",
+  "contributors": [
+    "DraftMan <contact@draftman.fr> (http://draftman.fr)",
+    "RichardDorian"
+  ],
   "license": "MIT",
   "dependencies": {
+    "@babel/preset-env": "^7.14.4",
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.13.0",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
+    "@types/jest": "^26.0.23",
+    "@types/node-fetch": "^2.5.10",
+    "@typescript-eslint/eslint-plugin": "^4.26.1",
+    "@typescript-eslint/parser": "^4.26.1",
     "babel-eslint": "^10.1.0",
     "dotenv": "^8.2.0",
-    "eslint": "^7.25.0",
+    "eslint": "^7.28.0",
     "husky": "^4.3.6",
-    "jest": "^26.6.3",
+    "jest": "^27.0.4",
     "lint-staged": "^10.5.3",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "rollup": "^2.51.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "ts-jest": "^27.0.3",
+    "typescript": "^4.3.2"
   },
   "directories": {
-    "lib": "lib",
+    "lib": "dist",
     "test": "tests"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Blagues-API/package-js.git"
+    "url": "git+https://github.com/Blagues-API/blagues-api-js.git"
   },
   "bugs": {
-    "url": "https://github.com/Blagues-API/package-js/issues"
+    "url": "https://github.com/Blagues-API/blagues-api-js/issues"
   },
-  "homepage": "https://github.com/Blagues-API/package-js#readme",
+  "homepage": "https://github.com/Blagues-API/blagues-api-js#readme",
   "publishConfig": {
     "access": "public"
   }

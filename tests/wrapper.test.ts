@@ -1,7 +1,6 @@
-require('dotenv').config();
+import BlaguesAPI, { Categories } from '../src';
 
-const BlaguesAPI = require('../lib/index');
-const api = new BlaguesAPI(process.env.token);
+const blagues = new BlaguesAPI(process.env.token);
 
 describe('wrapper api tests', () => {
   test('token exists', () => {
@@ -18,30 +17,36 @@ describe('wrapper api tests', () => {
 
     expect.assertions(1);
 
-    const joke = await api.Jokes.random();
+    const joke = await blagues.random();
     return expect(joke).toMatchObject(randomJoke);
   });
 
   test('random joke categorized', async () => {
     expect.assertions(1);
 
-    const joke = await api.Jokes.rancomCategorized(BlaguesAPI.categories.DEV);
-    return expect(joke.type).toBe(BlaguesAPI.categories.DEV);
+    const joke = await blagues.randomCategorized(Categories.DEV);
+    return expect(joke.type).toBe(Categories.DEV);
   });
 
   test('random joke with disallowed type', async () => {
-    expect.assertions(1);
+    expect.assertions(2);
 
-    const joke = await api.Jokes.random({
-      disallow: [BlaguesAPI.categories.DARK],
-    });
-    return expect(joke.type).not.toBe(BlaguesAPI.categories.DARK);
+    const [joke1, joke2] = await Promise.all([
+      blagues.random({
+        disallow: [Categories.DARK],
+      }),
+      blagues.random({
+        disallow: Categories.DARK,
+      }),
+    ]);
+    expect(joke1.type).not.toBe(Categories.DARK);
+    expect(joke2.type).not.toBe(Categories.DARK);
   });
 
   test('get joke by ID', async () => {
     expect.assertions(1);
 
-    const joke = await api.Jokes.fromId(815);
+    const joke = await blagues.fromId(815);
     return expect(joke.id).toBe(815);
   });
 });

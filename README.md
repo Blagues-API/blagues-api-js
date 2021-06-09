@@ -1,67 +1,74 @@
 # BlaguesAPI
 
-Voici un petit packet NPM tout mignon pour utiliser
-[BlaguesAPI](https://www.blagues-api.fr)
+Ce paquet Npm fourni une interface pour intéragir avec
+[Blagues-API](https://www.blagues-api.fr)
 
-## Pour commencer
+## Installation
 
-Pour commencer, il faut construire l'objet avec votre token
+Vous pouvez simplement installer la dépendance à votre projet depuis Yarn ou Npm
+:
 
-```js
-const BlaguesAPI = require('blaguesapi');
-const blaguesAPI = new BlaguesAPI('VOTRE_TOKEN_ICI');
+```shell
+$ yarn add blagues-api # npm install blagues-api
 ```
 
-## Réponse de l'API
+## Mise en place
 
-Si tout est bien mis en place, l'API vous renvéra une réponse comme celle ci :
-
-```json
-{
-  "id": 1,
-  "type": "dev",
-  "joke": "Un développeur ne descend pas du métro.",
-  "answer": "Il libère la RAM..."
-}
-```
-
-([Plus d'informations ici](https://www.blagues-api.fr/))
-
-## Blagues
-
-### random
-
-Méthode pour obtenir une blague aléatoire
+### Importation
 
 ```js
-await blaguesAPI.Jokes.random();
+// ES6
+import BlaguesAPI from 'blagues-api';
+
+// CommonJS
+const BlaguesAPI = require('blagues-api');
+
+// Browser
+<script src="https://unpkg.com/blagues-api@2.0.0/dist/blagues-api.min.js"></script>;
 ```
 
-A cette méthode, vous pouvez spécifier des filtres pour présicer la recherche,
-vous pouvez voir la liste des différentes catégories [ici](#catégories)
+### Initialisation
+
+Pour utiliser l'API, vous avez besoin d'un **token d'authentification** que vous
+pouvez obtenir en vous connectant sur [Blagues-API](https://www.blagues-api.fr/)
+avec votre compte Discord:
 
 ```js
-await blaguesAPI.Jokes.random({
-  disallow: [BlaguesAPI.categories.DARK, BlaguesAPI.categories.LIMIT]
+const blagues = new BlaguesAPI('VOTRE_TOKEN_ICI');
+```
+
+## Utilisation
+
+### Blague aléatoire
+
+```js
+await blagues.random();
+```
+
+A cette méthode, vous pouvez spécifier certains types que vous ne souhaitez pas
+recevoir.
+
+```js
+await blagues.random({
+  disallow: [blagues.categories.DARK, blagues.categories.LIMIT]
 });
 ```
 
-### randomCategorized
-
-Méthode pour obtenir une blague aléatoire provenant d'une catégorie spécifique,
-vous pouvez voir la liste des différentes catégories [ici](#catégories)
+### Blague aléatoire d'une catégorie
 
 ```js
-await blaguesAPI.Jokes.randomCategorized(BlaguesAPI.categories.DEV);
+await blagues.randomCategorized(blagues.categories.DEV);
 ```
 
-### fromId
+### Blague à partir de son ID
 
-Obtenir une blague avec un identifiant, pratique si vous voulez obtenir une
-blague précise.
+Les blagues sont identifiées par un ID que vous recevez en même tant que chaque
+blague.
+
+Spécifiez cet identifiant en paramètre et vous l'obtiendez à nouveau.
 
 ```js
-await blaguesAPI.Jokes.fromId(id);
+await blagues.fromId(50);
 ```
 
 ## Catégories
@@ -69,10 +76,10 @@ await blaguesAPI.Jokes.fromId(id);
 Certaines méthodes requiert en paramètre une catégorie.
 
 ```js
-BlaguesAPI.categories.GLOBAL; // Return GLOBAL category
-BlaguesAPI.categories.DEV; // Return DEV category
-BlaguesAPI.categories.DARK; // Return DARK category
-BlaguesAPI.categories.LIMIT; // Return LIMIT category
-BlaguesAPI.categories.BEAUF; // Return BEAUF category
-BlaguesAPI.categories.BLONDES; // Return BLONDES category
+blagues.categories.GLOBAL; // Blague tout publique
+blagues.categories.DEV; // Blague de développeur
+blagues.categories.DARK; // Blague d'humour noir
+blagues.categories.LIMIT; // Blague 18+
+blagues.categories.BEAUF; // Blague beauf
+blagues.categories.BLONDES; // Blague de blondes
 ```
