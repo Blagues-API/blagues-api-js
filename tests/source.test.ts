@@ -1,4 +1,5 @@
 import BlaguesAPI from '../src/';
+import '../src/types';
 
 const blagues = new BlaguesAPI(process.env.token);
 
