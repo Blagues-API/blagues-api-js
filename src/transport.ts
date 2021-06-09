@@ -1,4 +1,5 @@
-import fetch, { Response } from 'node-fetch';
+import 'cross-fetch/polyfill';
+import { HOST } from './constants';
 import type { RandomJokeOptionsResolvable } from './types';
 
 export default class Transport {
@@ -9,7 +10,7 @@ export default class Transport {
   }
 
   public get(endpoint: string, options?: RandomJokeOptionsResolvable): Promise<Response> {
-    let url = 'https://www.blagues-api.fr' + endpoint;
+    let url = HOST + endpoint;
     if (options) url += this._convertOptions(options);
     return fetch(url, {
       headers: this._getHeaders(),

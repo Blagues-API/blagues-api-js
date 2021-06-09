@@ -1,5 +1,6 @@
+import { Endpoints } from './constants';
 import Transport from './transport';
-import { Categories, Category, Endpoints, IDResolvable, JokeResponse, RandomJokeOptionsResolvable } from './types';
+import { Categories, Category, IDResolvable, JokeResponse, RandomJokeOptionsResolvable } from './types';
 
 export default class BlaguesAPI {
 
@@ -33,5 +34,3 @@ export default class BlaguesAPI {
     return response.json();
   }
 }
-
-export * from './types';

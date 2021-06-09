@@ -22,12 +22,6 @@ export type StatusCode =
   | 404
   | 500
 
-export enum Endpoints {
-  FROM_ID = '/api/id/:id:',
-  RANDOM = '/api/random',
-  RANDOM_CATEGORIZED = '/api/type/:type:/random',
-}
-
 export type DisallowResolvable = Category | Category[];
 export type IDResolvable = number | string;
 
