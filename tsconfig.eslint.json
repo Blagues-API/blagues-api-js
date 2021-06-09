@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "allowJs": false
+  },
+  "include": [
+    "tests/**/*.ts",
+    "jest.config.js",
+    "rollup.config.js",
+    ".eslintrc.json"
+  ]
+}

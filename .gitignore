@@ -1,2 +1,8 @@
+*.log
 node_modules/
 .env
+lib
+umd
+typings
+types
+dist
