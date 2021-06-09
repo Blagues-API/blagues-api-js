@@ -55,7 +55,7 @@ export default [{
       include: ['node_modules/**'],
     }),
     json(),
-    terser(),
+    terser({ format: { comments: false } }),
   ],
 },
 {
@@ -69,6 +69,6 @@ export default [{
   },
   plugins: [
     tsConfig,
-    terser(),
+    terser({ format: { comments: false } }),
   ],
 },];
