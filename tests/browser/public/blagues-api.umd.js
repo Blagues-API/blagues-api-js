@@ -1,0 +1,1 @@
+../../../dist/blagues-api.umd.js

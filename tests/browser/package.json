@@ -1,0 +1,14 @@
+{
+  "name": "blagues-api-express",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "jest": "^26.1.0",
+    "jest-puppeteer": "^4.4.0",
+    "puppeteer": "^5.2.1"
+  }
+}

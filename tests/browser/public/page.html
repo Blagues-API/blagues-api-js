@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tests Blagues-API</title>
+</head>
+<body>
+</body>
+</html>
+<script src="./blagues-api.umd.js"></script>
+<script id="script">
+  ;(async () => {
+    try {
+      const blagues = new BlaguesAPI('TOKEN_AUTO_REPLACEMENT')
+      const response = await blagues.random();
+
+      console.log(blagues)
+
+      const newDiv = document.createElement("div");
+      newDiv.setAttribute("id", "joke");
+      newDiv.textContent = response.id ? 'joke_received' : 'error'
+      document.body.appendChild(newDiv);
+    } catch (error) {
+      console.log(error)
+    }
+  })()
+</script>
+
