@@ -13,8 +13,7 @@
     "build:es": "rollup --config rollup.config.js --format es --file dist/blagues-api.esm.js",
     "build:unpkg": "rollup --config rollup.config.js --format iife --file dist/blagues-api.min.js",
     "test:watch": "jest --watch",
-    "test": "jest",
-    "publish": "npm publish"
+    "test": "jest"
   },
   "lint-staged": {
     "*.{js}": "eslint"
@@ -36,10 +35,10 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@babel/preset-env": "^7.14.4",
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.14.4",
     "@babel/preset-typescript": "^7.13.0",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
