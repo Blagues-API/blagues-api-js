@@ -2,9 +2,9 @@
   "name": "blagues-api",
   "version": "2.1.0",
   "description": "BlaguesAPI package",
-  "main": "./dist/blagues-api.esm.js",
+  "main": "./dist/blagues-api.umd.js",
   "module": "./dist/blagues-api.esm.js",
-  "browser": "./dist/blagues-api.min.js",
+  "browser": "./dist/blagues-api.umd.js",
   "typings": "./dist/types/index.d.ts",
   "types": "./dist/types/index.d.ts",
   "scripts": {
