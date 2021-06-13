@@ -17,7 +17,7 @@ $ yarn add blagues-api # npm install blagues-api
 ### Importation
 
 ```js
-// ES6
+// ES6 (includes typings)
 import BlaguesAPI from 'blagues-api';
 
 // CommonJS
@@ -51,6 +51,7 @@ recevoir.
 ```js
 await blagues.random({
   disallow: [blagues.categories.DARK, blagues.categories.LIMIT]
+  // disallow: ['dark', 'limit']
 });
 ```
 
@@ -58,6 +59,7 @@ await blagues.random({
 
 ```js
 await blagues.randomCategorized(blagues.categories.DEV);
+// await blagues.randomCategorized('dev');
 ```
 
 ### Blague à partir de son ID
