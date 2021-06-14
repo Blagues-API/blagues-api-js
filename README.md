@@ -42,14 +42,14 @@ const blagues = new BlaguesAPI('VOTRE_TOKEN_ICI');
 ### Blague aléatoire
 
 ```js
-await blagues.random();
+const blague = await blagues.random();
 ```
 
 A cette méthode, vous pouvez spécifier certains types que vous ne souhaitez pas
 recevoir.
 
 ```js
-await blagues.random({
+const blague = await blagues.random({
   disallow: [blagues.categories.DARK, blagues.categories.LIMIT]
   // disallow: ['dark', 'limit']
 });
@@ -58,8 +58,8 @@ await blagues.random({
 ### Blague aléatoire d'une catégorie
 
 ```js
-await blagues.randomCategorized(blagues.categories.DEV);
-// await blagues.randomCategorized('dev');
+const blague = await blagues.randomCategorized(blagues.categories.DEV);
+// const blague = await blagues.randomCategorized('dev');
 ```
 
 ### Blague à partir de son ID
@@ -70,7 +70,20 @@ blague.
 Spécifiez cet identifiant en paramètre et vous l'obtiendez à nouveau.
 
 ```js
-await blagues.fromId(50);
+const blague = await blagues.fromId(50);
+```
+
+## Valeur retournée
+
+```js
+// console.log(blague);
+
+{
+  id: 1,
+  type: 'dark',
+  joke: 'Question',
+  answer: 'Response'
+}
 ```
 
 ## Catégories
