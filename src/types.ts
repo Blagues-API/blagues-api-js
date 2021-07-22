@@ -33,7 +33,7 @@ export interface RandomJokeOptions {
 
 export interface JokeResponse {
   id: number;
-  type: string;
+  type: Category;
   joke: string;
   answer: string;
 }
