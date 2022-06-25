@@ -73,6 +73,12 @@ Spécifiez cet identifiant en paramètre et vous l'obtiendez à nouveau.
 const blague = await blagues.fromId(50);
 ```
 
+### Nombres de blagues
+
+```js
+const blague = await blagues.count();
+```
+
 ## Valeur retournée
 
 ```js
