@@ -21,11 +21,6 @@ export default class BlaguesAPI {
     this.categories = Categories;
   }
 
-  public async count(): Promise<CountJoke> {
-    const response = await this.transport.get(Endpoints.COUNT);
-    return response.json();
-  }
-
   public async random(
     options?: RandomJokeOptionsResolvable
   ): Promise<JokeResponse> {
@@ -42,8 +37,13 @@ export default class BlaguesAPI {
 
   async fromId(id: IDResolvable): Promise<JokeResponse> {
     const response = await this.transport.get(
-      Endpoints.FROM_ID.replace(':id:', id as string)
+      Endpoints.FROM_ID.replace(':id:', `${id}`)
     );
+    return response.json();
+  }
+
+  public async count(): Promise<CountJoke> {
+    const response = await this.transport.get(Endpoints.COUNT);
     return response.json();
   }
 }

@@ -73,12 +73,6 @@ Spécifiez cet identifiant en paramètre et vous l'obtiendez à nouveau.
 const blague = await blagues.fromId(50);
 ```
 
-### Nombres de blagues
-
-```js
-const blague = await blagues.count();
-```
-
 ## Valeur retournée
 
 ```js
@@ -103,4 +97,10 @@ blagues.categories.DARK; // Blague d'humour noir
 blagues.categories.LIMIT; // Blague 18+
 blagues.categories.BEAUF; // Blague beauf
 blagues.categories.BLONDES; // Blague de blondes
+```
+
+### Nombres de blagues
+
+```js
+const blague = await blagues.count();
 ```
