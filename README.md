@@ -98,3 +98,9 @@ blagues.categories.LIMIT; // Blague 18+
 blagues.categories.BEAUF; // Blague beauf
 blagues.categories.BLONDES; // Blague de blondes
 ```
+
+### Nombres de blagues
+
+```js
+const blague = await blagues.count();
+```

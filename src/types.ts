@@ -4,7 +4,7 @@ export enum Categories {
   DARK = 'dark',
   LIMIT = 'limit',
   BEAUF = 'beauf',
-  BLONDES = 'blondes',
+  BLONDES = 'blondes'
 }
 
 export type Category =
@@ -13,14 +13,9 @@ export type Category =
   | 'dark'
   | 'limit'
   | 'beauf'
-  | 'blondes'
+  | 'blondes';
 
-export type StatusCode =
-  | 200
-  | 400
-  | 401
-  | 404
-  | 500
+export type StatusCode = 200 | 400 | 401 | 404 | 500;
 
 export type DisallowResolvable = Category | Category[];
 export type IDResolvable = number | string;
@@ -38,8 +33,12 @@ export interface JokeResponse {
   answer: string;
 }
 
+export interface CountJoke {
+  count: number;
+}
+
 export interface ErrorResponse {
-  status: StatusCode,
-  error: string,
-  message: string,
+  status: StatusCode;
+  error: string;
+  message: string;
 }

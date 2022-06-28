@@ -12,7 +12,7 @@ describe('typescript tests', () => {
       id: expect.any(Number),
       type: expect.stringMatching(/global|dev|dark|limit|beauf|blondes/),
       joke: expect.any(String),
-      answer: expect.any(String),
+      answer: expect.any(String)
     };
 
     expect.assertions(1);

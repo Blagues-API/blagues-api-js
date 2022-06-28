@@ -1,4 +1,4 @@
-import BlaguesAPI from '../src/';
+import BlaguesAPI from '../src/index';
 import '../src/types';
 
 const blagues = new BlaguesAPI(process.env.token);
@@ -8,12 +8,17 @@ describe('source api tests', () => {
     return expect(process.env.token).toBeDefined();
   });
 
+  test('count joke', async () => {
+    const joke = await blagues.count();
+    return expect(joke);
+  });
+
   test('random joke', async () => {
     const randomJoke = {
       id: expect.any(Number),
       type: expect.stringMatching(/global|dev|dark|limit|beauf|blondes/),
       joke: expect.any(String),
-      answer: expect.any(String),
+      answer: expect.any(String)
     };
 
     expect.assertions(1);
@@ -34,11 +39,11 @@ describe('source api tests', () => {
 
     const [joke1, joke2] = await Promise.all([
       blagues.random({
-        disallow: [blagues.categories.DARK],
+        disallow: [blagues.categories.DARK]
       }),
       blagues.random({
-        disallow: blagues.categories.DARK,
-      }),
+        disallow: blagues.categories.DARK
+      })
     ]);
     expect(joke1.type).not.toBe(blagues.categories.DARK);
     expect(joke2.type).not.toBe(blagues.categories.DARK);
