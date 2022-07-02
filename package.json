@@ -1,6 +1,6 @@
 {
   "name": "blagues-api",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "BlaguesAPI package",
   "main": "./dist/blagues-api.umd.js",
   "module": "./dist/blagues-api.esm.js",
@@ -23,15 +23,9 @@
       "pre-commit": "lint-staged"
     }
   },
-  "keywords": [
-    "BlaguesAPI",
-    "wrapper api",
-    "typescript"
-  ],
+  "keywords": ["BlaguesAPI", "wrapper api", "typescript"],
   "author": "DraftMan <contact@draftman.fr> (http://draftman.fr)",
-  "contributors": [
-    "RichardDorian"
-  ],
+  "contributors": ["RichardDorian"],
   "license": "MIT",
   "dependencies": {
     "cross-fetch": "^3.1.4"
